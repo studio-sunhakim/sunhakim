@@ -17,9 +17,9 @@
     body {
       width: 100%;
       min-height: 100%;
-      font-family: Ubuntu, "Pretendard", "Helvetica Neue", Arial, sans-serif;
       background: #ffffff;
-      color: #000000;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      color: #222222;
     }
 
     a {
@@ -27,111 +27,112 @@
       text-decoration: none;
     }
 
-    body {
-      overflow-x: hidden;
-    }
-
-    .site-header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 100;
+    .header {
       width: 100%;
       height: 106px;
-      background: rgba(255, 255, 255, 0.96);
+      background: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      z-index: 10;
     }
 
     .header-inner {
       width: 100%;
       max-width: 1284px;
-      height: 100%;
-      margin: 0 auto;
-      padding: 24px 15px;
+      padding: 0 40px;
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
 
     .logo {
-      font-size: 22px;
-      line-height: 1;
+      font-size: 48px;
+      letter-spacing: -1px;
       font-weight: 400;
-      letter-spacing: 0.02em;
-      color: #222222;
       white-space: nowrap;
+      color: #222222;
     }
 
-    .desktop-nav {
+    .nav {
       display: flex;
       align-items: center;
-      gap: 0;
+      gap: 36px;
     }
 
-    .desktop-nav a {
-      display: table-cell;
-      height: 50px;
-      padding: 0 20px;
-      vertical-align: middle;
+    .nav a {
       font-size: 20px;
-      line-height: 50px;
       letter-spacing: 1px;
       font-weight: 400;
       color: #848484;
-      transition: color 0.25s ease;
-      white-space: nowrap;
+      transition: color 0.2s ease;
     }
 
-    .desktop-nav a:hover,
-    .desktop-nav a.active {
+    .nav a:hover {
       color: #005210;
     }
 
-    .mobile-header {
-      display: none;
-    }
-
-    .home-visual {
-      position: relative;
+    .main {
       width: 100%;
-      height: 100vh;
-      padding-top: 106px;
+      min-height: calc(100vh - 106px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
       overflow: hidden;
       background: #ffffff;
     }
 
+    .visual {
+      width: 100%;
+      height: calc(100vh - 106px);
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
     .slide {
       position: absolute;
-      inset: 106px 0 0 0;
+      inset: 0;
       opacity: 0;
-      transition: opacity 3s ease;
-      background-repeat: no-repeat;
-      background-position: 50% 50%;
-      background-size: contain;
+      transition: opacity 2.5s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
     }
 
     .slide.active {
       opacity: 1;
-      z-index: 2;
+      z-index: 1;
+    }
+
+    .slide img {
+      max-width: 100%;
+      max-height: 78vh;
+      object-fit: contain;
+      display: block;
     }
 
     .caption {
       position: absolute;
       left: 50%;
-      bottom: 42px;
-      z-index: 5;
+      bottom: 32px;
       transform: translateX(-50%);
+      z-index: 5;
       width: 90%;
       text-align: center;
       font-size: 16px;
       line-height: 1.5;
       color: #000000;
-      font-weight: 400;
     }
 
     .mobile-menu-button {
       display: none;
-      width: 36px;
-      height: 30px;
+      width: 32px;
+      height: 28px;
       border: 0;
       background: transparent;
       cursor: pointer;
@@ -141,17 +142,12 @@
       display: block;
       width: 22px;
       height: 1px;
-      margin: 7px auto;
       background: #222222;
+      margin: 7px auto;
     }
 
     .mobile-nav {
       display: none;
-      position: fixed;
-      top: 56px;
-      left: 0;
-      z-index: 99;
-      width: 100%;
       background: #ffffff;
       border-top: 1px solid rgba(0, 0, 0, 0.06);
       border-bottom: 1px solid rgba(0, 0, 0, 0.06);
@@ -159,16 +155,12 @@
 
     .mobile-nav a {
       display: block;
-      padding: 14px 20px;
-      font-size: 13px;
-      letter-spacing: 1px;
-      color: rgba(26, 30, 36, 0.7);
-      font-weight: 700;
+      padding: 13px 20px;
       text-align: center;
-    }
-
-    .mobile-nav a:hover {
-      color: #126737;
+      font-size: 12px;
+      letter-spacing: 1px;
+      font-weight: 700;
+      color: rgba(26, 30, 36, 0.7);
     }
 
     .mobile-nav.open {
@@ -176,20 +168,20 @@
     }
 
     @media (max-width: 991px) {
-      .site-header {
+      .header {
         height: 56px;
       }
 
       .header-inner {
-        height: 56px;
-        padding: 8px 20px;
+        padding: 0 20px;
       }
 
       .logo {
-        font-size: 17px;
+        font-size: 22px;
+        letter-spacing: 0;
       }
 
-      .desktop-nav {
+      .nav {
         display: none;
       }
 
@@ -197,44 +189,34 @@
         display: block;
       }
 
-      .home-visual {
-        padding-top: 56px;
+      .main,
+      .visual {
+        min-height: calc(100vh - 56px);
+        height: calc(100vh - 56px);
       }
 
       .slide {
-        inset: 56px 0 0 0;
-        background-size: contain;
+        padding: 20px;
+      }
+
+      .slide img {
+        max-height: 70vh;
       }
 
       .caption {
-        bottom: 28px;
-        font-size: 12px;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .logo {
-        font-size: 15px;
-      }
-
-      .caption {
-        bottom: 24px;
+        bottom: 22px;
         font-size: 11px;
-      }
-
-      .slide {
-        background-size: contain;
       }
     }
   </style>
 </head>
 
 <body>
-  <header class="site-header">
+  <header class="header">
     <div class="header-inner">
-      <a href="index.html" class="logo">KIM SUNHA</a>
+      <a href="index.html" class="logo">K I M&nbsp;&nbsp;S U N H A</a>
 
-      <nav class="desktop-nav">
+      <nav class="nav">
         <a href="about.html">ABOUT</a>
         <a href="studio.html">STUDIO</a>
         <a href="archive.html">ARCHIVE</a>
@@ -242,7 +224,7 @@
         <a href="contact.html">CONTACT</a>
       </nav>
 
-      <button class="mobile-menu-button" id="mobileMenuButton" aria-label="메뉴 열기">
+      <button class="mobile-menu-button" id="mobileMenuButton" aria-label="menu">
         <span></span>
         <span></span>
       </button>
@@ -257,71 +239,48 @@
     <a href="contact.html">CONTACT</a>
   </nav>
 
-  <main class="home-visual">
-    <section
-      class="slide active"
-      style="background-image: url('https://cdn.imweb.me/thumbnail/20241229/dc53efce15304.jpg');"
-      data-caption="Towards, 2017, Color on Fabric, 160.0 x 130.0cm"
-    ></section>
+  <main class="main">
+    <section class="visual">
+      <div class="slide active" data-caption="Towards, 2017, Color on Fabric, 160.0 x 130.0cm">
+        <img src="https://cdn.imweb.me/thumbnail/20241229/dc53efce15304.jpg" alt="Main artwork 01">
+      </div>
 
-    <section
-      class="slide"
-      style="background-image: url('https://cdn.imweb.me/thumbnail/20241229/41b3c253d3b51.jpg');"
-      data-caption="Towards, 2017, Color on Fabric, 112.0 x 81.0cm"
-    ></section>
+      <div class="slide" data-caption="Towards, 2017, Color on Fabric, 112.0 x 81.0cm">
+        <img src="https://cdn.imweb.me/thumbnail/20241229/41b3c253d3b51.jpg" alt="Main artwork 02">
+      </div>
 
-    <section
-      class="slide"
-      style="background-image: url('https://cdn.imweb.me/thumbnail/20241229/86d242b05aa47.jpg');"
-      data-caption="Towards, 2022, Color on canvas, 130 x 162cm"
-    ></section>
+      <div class="slide" data-caption="Towards, 2022, Color on canvas, 130 x 162cm">
+        <img src="https://cdn.imweb.me/thumbnail/20241229/86d242b05aa47.jpg" alt="Main artwork 03">
+      </div>
 
-    <section
-      class="slide"
-      style="background-image: url('https://cdn.imweb.me/thumbnail/20241229/cd023e67b90a7.jpg');"
-      data-caption="Untitled, 2002, Color on Korean Paper, 130.0 × 162.0cm"
-    ></section>
+      <div class="slide" data-caption="Untitled, 2002, Color on Korean Paper, 130.0 × 162.0cm">
+        <img src="https://cdn.imweb.me/thumbnail/20241229/cd023e67b90a7.jpg" alt="Main artwork 04">
+      </div>
 
-    <section
-      class="slide"
-      style="background-image: url('https://cdn.imweb.me/thumbnail/20241229/f69120e0dca8f.jpg');"
-      data-caption="Towards, 2022, Color on canvas, 360.0 x 4480.0 cm"
-    ></section>
-
-    <section
-      class="slide"
-      style="background-image: url('https://cdn.imweb.me/thumbnail/20241229/2c5e194183093.jpg');"
-      data-caption="Thought (想), 2000, Color on Korean paper, 130.0 x 320.0cm"
-    ></section>
-
-    <p class="caption" id="caption">
-      Towards, 2017, Color on Fabric, 160.0 x 130.0cm
-    </p>
+      <p class="caption" id="caption">
+        Towards, 2017, Color on Fabric, 160.0 x 130.0cm
+      </p>
+    </section>
   </main>
 
   <script>
     const slides = document.querySelectorAll(".slide");
     const caption = document.getElementById("caption");
-    const mobileMenuButton = document.getElementById("mobileMenuButton");
-    const mobileNav = document.getElementById("mobileNav");
-
-    let currentSlide = 0;
+    let current = 0;
 
     function showSlide(index) {
-      slides.forEach((slide) => {
-        slide.classList.remove("active");
-      });
-
+      slides.forEach(slide => slide.classList.remove("active"));
       slides[index].classList.add("active");
       caption.textContent = slides[index].dataset.caption;
     }
 
-    function nextSlide() {
-      currentSlide = (currentSlide + 1) % slides.length;
-      showSlide(currentSlide);
-    }
+    setInterval(() => {
+      current = (current + 1) % slides.length;
+      showSlide(current);
+    }, 7000);
 
-    setInterval(nextSlide, 7000);
+    const mobileMenuButton = document.getElementById("mobileMenuButton");
+    const mobileNav = document.getElementById("mobileNav");
 
     mobileMenuButton.addEventListener("click", () => {
       mobileNav.classList.toggle("open");
