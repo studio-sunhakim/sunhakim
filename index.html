@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KIM SUNHA</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="#" class="logo">K I M&nbsp;&nbsp;S U N H A</a>
+
+      <nav class="desktop-nav">
+        <div class="nav-item">
+          <a href="#about">ABOUT</a>
+        </div>
+
+        <div class="nav-item">
+          <a href="#studio">STUDIO</a>
+        </div>
+
+        <div class="nav-item">
+          <a href="#archive">ARCHIVE</a>
+          <div class="dropdown">
+            <a href="#archive">ALL</a>
+            <a href="#archive-2026">2026</a>
+            <a href="#archive-2025">2025</a>
+            <a href="#archive-2024">2024</a>
+            <a href="#archive-2023">2023</a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <a href="#exhibitions">EXHIBITIONS</a>
+        </div>
+
+        <div class="nav-item">
+          <a href="#contact">CONTACT</a>
+        </div>
+      </nav>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="메뉴 열기">
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <nav class="mobile-nav" id="mobileNav">
+      <a href="#about">ABOUT</a>
+      <a href="#studio">STUDIO</a>
+      <a href="#archive">ARCHIVE</a>
+      <a href="#exhibitions">EXHIBITIONS</a>
+      <a href="#contact">CONTACT</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-title-mobile">
+        <h1>KIM SUNHA</h1>
+        <p>Textile · Fashion · Art Works</p>
+      </div>
+
+      <div class="slider">
+        <button class="slide-btn prev" id="prevBtn" aria-label="이전 작품">‹</button>
+
+        <figure class="artwork-frame">
+          <img id="artworkImage" src="images/work-01.jpg" alt="Artwork image" />
+          <figcaption id="artworkCaption">
+            Stillness in Bloom, 2024, Textile on fabric, 162.0 × 130.0 cm
+          </figcaption>
+        </figure>
+
+        <button class="slide-btn next" id="nextBtn" aria-label="다음 작품">›</button>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="text-section-inner">
+        <h2>ABOUT</h2>
+        <p>
+          Kim Sunha is a textile and fashion-based designer and artist exploring
+          the relationship between surface, material, pattern, body, and visual memory.
+        </p>
+        <a href="#" class="text-link">Read more</a>
+      </div>
+    </section>
+
+    <section class="studio" id="studio">
+      <div class="section-heading">
+        <h2>STUDIO</h2>
+        <p>Textile, fashion, and visual design projects from the studio.</p>
+      </div>
+
+      <div class="studio-grid">
+        <article class="studio-card">
+          <img src="images/studio-01.jpg" alt="Studio image 01" />
+          <div>
+            <h3>Textile Design</h3>
+            <p>Pattern, surface, material research, and textile-based visual work.</p>
+          </div>
+        </article>
+
+        <article class="studio-card">
+          <img src="images/studio-02.jpg" alt="Studio image 02" />
+          <div>
+            <h3>Fashion Objects</h3>
+            <p>Garments, silhouettes, fashion art pieces, and body-related forms.</p>
+          </div>
+        </article>
+
+        <article class="studio-card">
+          <img src="images/studio-03.jpg" alt="Studio image 03" />
+          <div>
+            <h3>Visual Archive</h3>
+            <p>Images, studies, sketches, and records developed through studio practice.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="archive" id="archive">
+      <div class="section-heading">
+        <h2>ARCHIVE</h2>
+        <p>Selected works and visual records by year.</p>
+      </div>
+
+      <div class="year-block" id="archive-2026">
+        <h3>2026</h3>
+        <div class="works-grid">
+          <article class="work-card" data-index="0">
+            <img src="images/work-01.jpg" alt="Work 01" />
+            <p>Stillness in Bloom, 2026</p>
+          </article>
+
+          <article class="work-card" data-index="1">
+            <img src="images/work-02.jpg" alt="Work 02" />
+            <p>Mother-of-Pearl Garden, 2026</p>
+          </article>
+        </div>
+      </div>
+
+      <div class="year-block" id="archive-2025">
+        <h3>2025</h3>
+        <div class="works-grid">
+          <article class="work-card" data-index="2">
+            <img src="images/work-03.jpg" alt="Work 03" />
+            <p>Hidden Bloom, 2025</p>
+          </article>
+
+          <article class="work-card" data-index="3">
+            <img src="images/work-04.jpg" alt="Work 04" />
+            <p>Towards the Surface, 2025</p>
+          </article>
+        </div>
+      </div>
+
+      <div class="year-block" id="archive-2024">
+        <h3>2024</h3>
+        <div class="works-grid">
+          <article class="work-card" data-index="4">
+            <img src="images/work-05.jpg" alt="Work 05" />
+            <p>Quiet Surface, 2024</p>
+          </article>
+
+          <article class="work-card" data-index="5">
+            <img src="images/work-06.jpg" alt="Work 06" />
+            <p>Layered Memory, 2024</p>
+          </article>
+        </div>
+      </div>
+
+      <div class="year-block" id="archive-2023">
+        <h3>2023</h3>
+        <div class="works-grid">
+          <article class="work-card" data-index="6">
+            <img src="images/work-07.jpg" alt="Work 07" />
+            <p>Soft Remains, 2023</p>
+          </article>
+
+          <article class="work-card" data-index="7">
+            <img src="images/work-08.jpg" alt="Work 08" />
+            <p>Between Fabric and Image, 2023</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="exhibitions" id="exhibitions">
+      <div class="text-section-inner">
+        <h2>EXHIBITIONS</h2>
+
+        <div class="exhibition-list">
+          <article>
+            <span>2026</span>
+            <p>Busan Textile Design Invitational Exhibition, Busan, Korea</p>
+          </article>
+
+          <article>
+            <span>2025</span>
+            <p>Selected Textile & Fashion Art Exhibition, Seoul, Korea</p>
+          </article>
+
+          <article>
+            <span>2024</span>
+            <p>Surface and Pattern, Group Exhibition, Seoul, Korea</p>
+          </article>
+
+          <article>
+            <span>2023</span>
+            <p>New Visual Textile Archive, Group Exhibition, Korea</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="text-section-inner">
+        <h2>CONTACT</h2>
+        <p>
+          For collaborations, exhibitions, commissions, and inquiries,
+          please contact the studio.
+        </p>
+
+        <div class="contact-links">
+          <a href="mailto:your-email@example.com">your-email@example.com</a>
+          <a href="https://www.instagram.com/" target="_blank" rel="noreferrer">Instagram</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>ALL IMAGES AND CONTENTS © KIM SUNHA — ALL RIGHTS RESERVED</p>
+    <a href="#home">Back to top</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
