@@ -6,7 +6,227 @@
 
   <title>KIM SUNHA</title>
 
-  <link rel="stylesheet" href="style.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      width: 100%;
+      min-height: 100%;
+      font-family: Ubuntu, "Pretendard", "Helvetica Neue", Arial, sans-serif;
+      background: #ffffff;
+      color: #000000;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    body {
+      overflow-x: hidden;
+    }
+
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 100;
+      width: 100%;
+      height: 106px;
+      background: rgba(255, 255, 255, 0.96);
+    }
+
+    .header-inner {
+      width: 100%;
+      max-width: 1284px;
+      height: 100%;
+      margin: 0 auto;
+      padding: 24px 15px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 22px;
+      line-height: 1;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      color: #222222;
+      white-space: nowrap;
+    }
+
+    .desktop-nav {
+      display: flex;
+      align-items: center;
+      gap: 0;
+    }
+
+    .desktop-nav a {
+      display: table-cell;
+      height: 50px;
+      padding: 0 20px;
+      vertical-align: middle;
+      font-size: 20px;
+      line-height: 50px;
+      letter-spacing: 1px;
+      font-weight: 400;
+      color: #848484;
+      transition: color 0.25s ease;
+      white-space: nowrap;
+    }
+
+    .desktop-nav a:hover,
+    .desktop-nav a.active {
+      color: #005210;
+    }
+
+    .mobile-header {
+      display: none;
+    }
+
+    .home-visual {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      padding-top: 106px;
+      overflow: hidden;
+      background: #ffffff;
+    }
+
+    .slide {
+      position: absolute;
+      inset: 106px 0 0 0;
+      opacity: 0;
+      transition: opacity 3s ease;
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      background-size: contain;
+    }
+
+    .slide.active {
+      opacity: 1;
+      z-index: 2;
+    }
+
+    .caption {
+      position: absolute;
+      left: 50%;
+      bottom: 42px;
+      z-index: 5;
+      transform: translateX(-50%);
+      width: 90%;
+      text-align: center;
+      font-size: 16px;
+      line-height: 1.5;
+      color: #000000;
+      font-weight: 400;
+    }
+
+    .mobile-menu-button {
+      display: none;
+      width: 36px;
+      height: 30px;
+      border: 0;
+      background: transparent;
+      cursor: pointer;
+    }
+
+    .mobile-menu-button span {
+      display: block;
+      width: 22px;
+      height: 1px;
+      margin: 7px auto;
+      background: #222222;
+    }
+
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      top: 56px;
+      left: 0;
+      z-index: 99;
+      width: 100%;
+      background: #ffffff;
+      border-top: 1px solid rgba(0, 0, 0, 0.06);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    }
+
+    .mobile-nav a {
+      display: block;
+      padding: 14px 20px;
+      font-size: 13px;
+      letter-spacing: 1px;
+      color: rgba(26, 30, 36, 0.7);
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .mobile-nav a:hover {
+      color: #126737;
+    }
+
+    .mobile-nav.open {
+      display: block;
+    }
+
+    @media (max-width: 991px) {
+      .site-header {
+        height: 56px;
+      }
+
+      .header-inner {
+        height: 56px;
+        padding: 8px 20px;
+      }
+
+      .logo {
+        font-size: 17px;
+      }
+
+      .desktop-nav {
+        display: none;
+      }
+
+      .mobile-menu-button {
+        display: block;
+      }
+
+      .home-visual {
+        padding-top: 56px;
+      }
+
+      .slide {
+        inset: 56px 0 0 0;
+        background-size: contain;
+      }
+
+      .caption {
+        bottom: 28px;
+        font-size: 12px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .logo {
+        font-size: 15px;
+      }
+
+      .caption {
+        bottom: 24px;
+        font-size: 11px;
+      }
+
+      .slide {
+        background-size: contain;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -21,23 +241,91 @@
         <a href="exhibitions.html">EXHIBITIONS</a>
         <a href="contact.html">CONTACT</a>
       </nav>
+
+      <button class="mobile-menu-button" id="mobileMenuButton" aria-label="메뉴 열기">
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </header>
 
-  <main class="home-main">
-    <section class="home-visual">
-      <img src="images/main.jpg" alt="Main artwork" class="main-image" />
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="about.html">ABOUT</a>
+    <a href="studio.html">STUDIO</a>
+    <a href="archive.html">ARCHIVE</a>
+    <a href="exhibitions.html">EXHIBITIONS</a>
+    <a href="contact.html">CONTACT</a>
+  </nav>
 
-      <div class="home-caption">
-        <p>Stillness in Bloom, Mother-of-Pearl Garden</p>
-      </div>
-    </section>
+  <main class="home-visual">
+    <section
+      class="slide active"
+      style="background-image: url('https://cdn.imweb.me/thumbnail/20241229/dc53efce15304.jpg');"
+      data-caption="Towards, 2017, Color on Fabric, 160.0 x 130.0cm"
+    ></section>
+
+    <section
+      class="slide"
+      style="background-image: url('https://cdn.imweb.me/thumbnail/20241229/41b3c253d3b51.jpg');"
+      data-caption="Towards, 2017, Color on Fabric, 112.0 x 81.0cm"
+    ></section>
+
+    <section
+      class="slide"
+      style="background-image: url('https://cdn.imweb.me/thumbnail/20241229/86d242b05aa47.jpg');"
+      data-caption="Towards, 2022, Color on canvas, 130 x 162cm"
+    ></section>
+
+    <section
+      class="slide"
+      style="background-image: url('https://cdn.imweb.me/thumbnail/20241229/cd023e67b90a7.jpg');"
+      data-caption="Untitled, 2002, Color on Korean Paper, 130.0 × 162.0cm"
+    ></section>
+
+    <section
+      class="slide"
+      style="background-image: url('https://cdn.imweb.me/thumbnail/20241229/f69120e0dca8f.jpg');"
+      data-caption="Towards, 2022, Color on canvas, 360.0 x 4480.0 cm"
+    ></section>
+
+    <section
+      class="slide"
+      style="background-image: url('https://cdn.imweb.me/thumbnail/20241229/2c5e194183093.jpg');"
+      data-caption="Thought (想), 2000, Color on Korean paper, 130.0 x 320.0cm"
+    ></section>
+
+    <p class="caption" id="caption">
+      Towards, 2017, Color on Fabric, 160.0 x 130.0cm
+    </p>
   </main>
 
-  <footer class="site-footer">
-    <p>© KIM SUNHA. ALL RIGHTS RESERVED.</p>
-  </footer>
+  <script>
+    const slides = document.querySelectorAll(".slide");
+    const caption = document.getElementById("caption");
+    const mobileMenuButton = document.getElementById("mobileMenuButton");
+    const mobileNav = document.getElementById("mobileNav");
 
-  <script src="script.js"></script>
+    let currentSlide = 0;
+
+    function showSlide(index) {
+      slides.forEach((slide) => {
+        slide.classList.remove("active");
+      });
+
+      slides[index].classList.add("active");
+      caption.textContent = slides[index].dataset.caption;
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }
+
+    setInterval(nextSlide, 7000);
+
+    mobileMenuButton.addEventListener("click", () => {
+      mobileNav.classList.toggle("open");
+    });
+  </script>
 </body>
 </html>
